@@ -331,30 +331,31 @@ section .work .bar-down{
 
 section .tool {
     width: 100%;
-    max-height: 1200px;
-    height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:yellowgreen;
+    /* max-height: 1200px; */
+    /* height: 900px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-color:yellowgreen; */
     position: relative;
+    padding: 70px 0 100px 0;
+    /* background-color: deeppink; */
 }
 
 section .tool-container {
-    display: flex;
     width: 70%;
     max-width: 1000px;
     min-width: 700px;
-    margin: 50px auto;
-    background-color: wheat;
-    justify-content: center;
+    margin: 0 auto;
+    /* background-color: wheat; */
 }
 
 section .tool-title {
-    background-color: yellow;
-    position: absolute;
+    /* background-color: yellow; */
+    /* position: absolute;
     top: 60px;
-    left: 150px;
+    left: 150px; */
+    padding: 0 20px;
 }
 
 section .tool-title h4 {
@@ -362,39 +363,99 @@ section .tool-title h4 {
     font-size: 6rem;
 }
 
-/* section .tool-title p {
-} */
+section .tool-title p {
+    width: 100%;
+} 
 
 section .tools {
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
-    justify-content: space-evenly;
+    width: 100%;
+    min-width: 200px;
+    height: 100%;
+    justify-content: flex-start;
     align-items: flex-start;
     /* background-color: violet; */
+    margin: 50px auto;
 }
 
 section .tool-icon {
     width: 200px;
-    flex: 1 1 0px;
-    margin: 20px;
+    flex: 0 1 150px;
+    margin: 20px auto;
+    z-index: 10;
 }
 
 section .tool-icon img {
     width: 100px;
-    margin-top: 20px;
+    margin: 5px auto;
 }
 
 section .tool-icon .small-text {
     width: 100px;
     font-size: 0.8rem;
     text-align: center;
+    z-index: 10;
 }
 
 .bar-ver {
     background-color: var(--clr-accent);
-    width: 20px;
+    width: 5px;
     height: 80px;
+}
+
+.bar-hor {
+    background-color: var(--clr-accent);
+    width: 5px;
+    height: 80px;
+    transform: rotate(90deg);
+}
+
+.cross-left {
     position: absolute;
-    top: 0;
+    bottom: 10%;
+    left: 10%;
+}
+
+.cross-right {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    transform: rotate(180deg);
+}
+
+.cross-container-left,
+.cross-container-right {
+    position: relative;
+    /* background-color:darkslateblue; */
+}
+
+.bar-ver-position {
+    position: absolute;
+    bottom: -60px;
+    right: 10px;
+}
+
+.bar-hor-position {
+    position: absolute;
+}
+
+.circle-tool-left {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    position:absolute;
+    top: 350px;
+    left: 5%;
+}
+
+.circle-tool-right {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position:absolute;
+    transform: rotate(-45deg);
+    bottom: 50px;
+    right: 5%;
 }
