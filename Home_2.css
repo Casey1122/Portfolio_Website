@@ -50,6 +50,11 @@ html {
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234e3c3c' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+.diagonal-line {
+    background-color: rgba(255,255,255,0);
+background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 /*--------------------------------- Desktop Nav ---------------------------------*/
 
 nav {
@@ -458,4 +463,72 @@ section .tool-icon .small-text {
     transform: rotate(-45deg);
     bottom: 50px;
     right: 5%;
+}
+
+/*--------------------------------- Desktop Contact ---------------------------------*/
+
+footer {
+    background: var(--clr-primary);
+    color: white;
+    height: 700px;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+footer h3 {
+    text-align: center;
+    padding: 100px 0 50px;
+    font-size: 3rem;
+    font-family: var(--ff-accent);
+    font-weight: 700;
+}
+
+footer .contacts {
+    display: flex;
+    /* background-color:yellowgreen; */
+    justify-content: center;
+    padding: 40px 0 80px;
+}
+
+footer .contact-method {
+    margin: 0 25px;
+    flex: 0 1 250px;
+}
+
+footer .contact-method .contact-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+footer .contact-method .contact-detail {
+    font-size: 0.8rem;
+}
+
+footer .contact-method img {
+    width: 150px;
+    box-shadow: 3px 3px white;
+}
+
+footer .circle-contact {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    opacity: 0.7;
+}
+
+footer .circle-gray {
+    width: 600px;
+    height: 600px;
+    background-color: rgb(76, 76, 76);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -160px;
+    right: -200px;
+    opacity: 0.15;
 }
