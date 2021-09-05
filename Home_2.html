@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./Home_2.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Casey's Portfolio</title>
 </head>
 <body>
@@ -21,9 +22,11 @@
         </div>
     </nav>
 
+    <!-- --------------------------------- Hero --------------------------------- -->
+
     <section>
         <div class="hero-containter texture">
-            <div class="hero">
+            <div class="hero" data-aos="fade-up">
                 <div class="hero-text">
                     <h2>Hi there.</h2>
                     <p>I'm Casey. Welcome to my portfolio.</p>
@@ -32,18 +35,19 @@
                 <div class="circle-hero circle-style-red"></div>
                 <div class="bar"></div>
             </div>
-            <div class="scroll-text">
-                <span>scroll down</span>
+            <div class="scroll-text" data-aos="fade-up">
+                <span><a href="#about-me">scroll down</a></span>
                 <img class="arrow" src="./img/arrow.svg" alt="down arrow">
             </div>
         </div>
 
         <!-- --------------------------------- About Me --------------------------------- -->
         
-        <div class="intro graph-paper">
-            <div class="intro-container">
+        <div id="about-me" class="intro graph-paper">
+            <div class="intro-container" data-aos="fade-up">
                 <div class="photo-holder">
-                    <img src="./img/pro_pic.png" alt="Casey in Japan">
+                    <img class="signature" src="./img/Signature_Signature.svg" alt="signature">
+                    <img class="my-pic" src="./img/pro_pic.png" alt="Casey in Japan">
                     <div class="frame"></div>
                     <div class="circle-about circle-style-red"></div>
                 </div>
@@ -51,14 +55,15 @@
                     <h3>About Me.</h3>
                     <p>I graduated from The Hong Kong Polytechnic University with a major in knitwear design. Throughout my career, I have been given chances to try out different positions in the creative field, from amenity kit designer, graphic designer, visual merchandiser and even digital marketer. My enthusiasm for fascinating design, product, technology, music and movies has always provided me with food for thought. Months ago, I found myself interested in interactive design. During freelancing, I signed up with online courses and webinars to gain certain knowledge, like coding (html, css and javascript), prototyping (Figma, Adobe Xd) and UX design. I hope I can land a job in this exciting field. Oh, I also build this website from scratch!</p>
                 </div>
+                <img class="quote" src="img/Signature_quote.svg" alt="Don't wait until you feel ready.">
             </div>
         </div>
 
         <!-- --------------------------------- Desktop Work --------------------------------- -->
 
         <div class="work texture">
-            <div class="work-container">
-                <h4>I work</h4>
+            <div class="work-container" data-aos="fade-up">
+                <h4>My work</h4>
                 <div class="work-list">
                     <div class="work-type">
                         <div class="work-title">
@@ -104,10 +109,10 @@
             <div class="bar-down stripe"></div>
         </div>
 
-        <!-- --------------------------------- Desktop Work --------------------------------- -->
+        <!-- --------------------------------- Desktop Tools --------------------------------- -->
 
         <div class="tool graph-paper">
-            <div class="tool-container">
+            <div class="tool-container" data-aos="fade-up">
                 <div class="tool-title">
                     <h4>I use</h4>
                     <p>Throughout these years, I have beening using number of creative tools to fulfil my job. During the current freelancing time, I sign up to various online courses and webinars to advance my skill set. I dive into the front-end developemtn path at the moment, it's very challenging especially to a person without a coding background. I have built this website from scratch, not so perfect, but definitely an achievement to me.</p>
@@ -172,7 +177,18 @@
         
         <footer>
             <h3>Contact</h3>
-            <div class="contacts">
+                <div class="form-container">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Name" required>
+                        <input type="text" id="email" placeholder="Email" required>
+                        <input type="subject" id="subject" placeholder="Subject" required>
+                        <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea>
+                        <button type="send">Send</button>
+                    </div>
+                </div>
+           </form>
+
+            <!-- <div class="contacts">
                 <div class="contact-method">
                     <img src="img/Contact Icon Black_Email.svg" alt="email icon">
                     <p class="contact-title">Email</p>
@@ -188,10 +204,15 @@
                     <p class="contact-title">Linkin</p>
                     <p class="contact-detail">Casey Chau</p>
                 </div>
-            </div>
+            </div> -->
+            <p class="disclaimer">Built by Casey 2021</p>
             <div class="circle-gray"></div>
             <div class="circle-contact diagonal-line"></div>
         </footer>
     </section>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

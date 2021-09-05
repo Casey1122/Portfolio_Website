@@ -11,6 +11,13 @@
   box-sizing: border-box;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 /*--------------------------------- Custom Properties ---------------------------------*/
 
 :root {
@@ -28,6 +35,7 @@ html {
   color: var(--clr-primary);
   height: 100%;
   overflow-x: hidden;
+  font-size: 14px;
 }
 
 .circle-style-red {
@@ -188,8 +196,13 @@ section .scroll-text {
   right: 40px;
   bottom: 40px;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
   color: var(--clr-minor);
+  animation: MoveUpDown 3s linear infinite;
+}
+
+section .scroll-text a{
+  text-decoration: none;
+  color:var(--clr-minor);
 }
 
 /*--------------------------------- Desktop About ---------------------------------*/
@@ -198,9 +211,11 @@ section .intro {
   /* background-color: yellowgreen; */
   width: 100%;
   height: 1000px;
+  max-height: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 section .intro-container {
@@ -218,7 +233,15 @@ section .photo-holder {
   position: relative;
 }
 
-section .intro img {
+section .signature {
+  position: absolute;
+  z-index: 11;
+  width: 100px;
+  left: 30px;
+  bottom: 30px;
+}
+
+section .intro .my-pic {
   position: relative;
   width: 350px;
   height: auto;
@@ -249,7 +272,7 @@ section .circle-about {
 section .intro-text h3 {
   font-family: var(--ff-accent);
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
   margin: 20px 20px 20px 40px;
   border-bottom: 3px solid var(--clr-theme);
 }
@@ -260,12 +283,22 @@ section .intro-text p {
   margin: 20px 20px 20px 40px;
 }
 
+section .quote {
+  position: absolute;
+  width: 600px;
+  right: 10%;
+  top: 0px;
+  opacity: 0.05;
+  animation: rotation 25s infinite linear;
+}
+
 /*--------------------------------- Desktop Work ---------------------------------*/
 
 section .work {
   width: 100%;
-  max-height: 1800px;
-  /* height: 900px; */
+  max-height: 1600px;
+  height: 100%;
+  padding: 50px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -283,15 +316,15 @@ section .work-container {
   margin: 50px auto;
   /* background-color:darksalmon; */
   position: relative;
-  border-right: 5px solid var(--clr-theme);
-  border-bottom: 5px solid var(--clr-theme);
+  border-right: 3px solid var(--clr-theme);
+  border-bottom: 3px solid var(--clr-theme);
 }
 
 section .work-container h4 {
   color: var(--clr-accent);
   font-size: 6rem;
   position: absolute;
-  left: 150px;
+  left: 100px;
   top: -20px;
 }
 
@@ -352,6 +385,7 @@ section .work .bar-down {
   position: absolute;
   left: 0;
   bottom: -10px;
+  z-index: 10;
 }
 
 /*--------------------------------- Desktop tool ---------------------------------*/
@@ -359,14 +393,13 @@ section .work .bar-down {
 section .tool {
   width: 100%;
   /* max-height: 1200px; */
-  /* height: 900px; */
+  /* height: 1200px; */
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
   /* background-color:yellowgreen; */
   position: relative;
   padding: 70px 0 100px 0;
-  /* background-color: deeppink; */
 }
 
 section .tool-container {
@@ -492,7 +525,6 @@ section .tool-icon .small-text {
 footer {
   background: var(--clr-primary);
   color: white;
-  height: 700px;
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -531,7 +563,14 @@ footer .contact-method .contact-detail {
 
 footer .contact-method img {
   width: 150px;
-  box-shadow: 3px 3px white;
+  box-shadow: 1px 1px white;
+}
+
+footer .disclaimer {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin: 40px auto 40px;
+  text-align: center;
 }
 
 footer .circle-contact {
@@ -553,4 +592,250 @@ footer .circle-gray {
   bottom: -160px;
   right: -200px;
   opacity: 0.15;
+}
+
+.form-container {
+  width: 50%;
+  /* background-color:aqua; */
+  margin: 5% 5% 5% 10%;
+}
+
+input,
+textarea {
+  font-family: var(--ff-primary);
+  display: block;
+  width: 100%;
+  margin-bottom: 3em;
+  height: 2em;
+  /* width: 60%;
+  height: 3em;
+  margin: 0 0 50px 5%; */
+  color: white;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color:black;
+}
+
+textarea {
+  height: 8em;
+  max-width: 100%;
+  resize: none;
+}
+
+button {
+  background-color: white;
+  border: none;
+  padding: 10px 30px;
+  font-family: var(--ff-primary);
+  font-weight: 600;
+  margin-bottom: 50px;
+  cursor: pointer;;
+}
+
+/*--------------------------------- Animation ---------------------------------*/
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/*--------------------------------- Breakpoint ---------------------------------*/
+
+@media screen and (min-width: 650px) and (max-width: 1024px) {
+  section .intro {
+    height: 1200px;
+  }
+
+  section .intro-container{
+    flex-direction: column;
+    background-color: lawngreen;
+    align-items: center;
+  }
+
+  section .intro-text {
+    /* background-color:tomato; */
+    width: 600px;
+    margin-top: 60px;
+  }
+
+  section .tools {
+    width: 500px;
+  }
+
+  section .circle-tool-right {
+    width: 200px;
+    height: 200px;
+  }
+
+  section .work-container {
+    background-color: darksalmon;
+    min-width: 600px;
+  }
+
+  section .work {
+    overflow-x: hidden;
+  }
+
+  section .tool-title p {
+    background-color: darksalmon;
+    width: 600px;
+  }
+}
+
+@media screen and (min-width:481px) and (max-width: 650px){
+  section .intro-container{
+    flex-direction: column;
+    background-color:deeppink;
+    align-items: center;
+    min-width: 100%;
+  }
+
+  section .intro-text {
+    /* background-color:tomato; */
+    width: 450px;
+    margin-top: 20px;
+  }
+
+  /* section .work {
+    overflow-x: hidden;
+  } */
+
+  section .work-container {
+    background-color: darksalmon;
+    min-width: 450px;
+  }
+
+  section .work-container h4 {
+    font-size: 4rem;
+    left: 10px;
+    top: 10px;
+  }
+
+  section .work .bar-down {
+    width: 100%;
+  }
+
+  section .tool-container {
+    min-width: 450px;
+  }
+
+  section .tool-title h4{
+    font-size: 4rem;
+    width: 450px;
+  }
+
+  section .tool-title p{
+    width: 100%;
+  }
+
+  section .tools {
+    width: 450px;
+    margin: 0 auto;
+  }
+
+  .circle-tool-right {
+    opacity: .2;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section .intro {
+    height: 1400px;
+    overflow-x: hidden;
+  }
+  
+  section .intro-container{
+    background-color:slateblue;
+    min-width: 350px;
+  }
+
+  section .intro .my-pic{
+    width: 250px;
+  }
+
+  section .intro .frame{
+    width: 250px;
+    height: 350px;
+  }
+
+  section .intro-text {
+    width: 300px;
+    margin: 0
+  }
+
+  section .intro-text h3{
+    font-size: 1.5rem;
+  }
+
+  section .intro-text p{
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+  section .work-container{
+    background-color: violet;
+    min-width: 350px;
+  }
+
+  section .work-list {
+    width: 300px;
+    background-color: tomato;
+  }
+
+  section .work-container h4{
+    left: 10px;
+    top: 10px;
+    background-color: violet;
+  }
+
+  section .work-type p{
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
+
+  section .work .bar-down {
+    width: 425px;
+  }
+
+  section .tool-container {
+    min-width: 350px;
+  }
+
+  section .tool-title h4 {
+    font-size: 4rem;
+  }
+
+  section .tools {
+    width: 300px;
+  }
+
+  section .tool-title p {
+    font-size: 0.8rem;
+  }
+
+  section .tool-icon img {
+    width: 75px;
+    margin: 0 10px;
+  }
+
+  section .tool-icon .small-text {
+    font-size: 0.6rem;
+  }
 }
