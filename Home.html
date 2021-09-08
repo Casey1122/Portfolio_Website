@@ -11,12 +11,12 @@
 <body>
     <nav class="texture">
         <div class="logo">
-            <a href="#"><img src="./img/Contact Icon Black_logo.svg" alt="logo"></a>
+            <a href="./Home.html"><img src="./img/Contact Icon Black_logo.svg" alt="logo"></a>
         </div>
 
             <ul class="nav-links">
                 <li><a class="link-effect" href="#">UX/UI Design</a></li>
-                <li><a class="link-effect" href="#">Graphic Design</a></li>
+                <li><a class="link-effect" href="./Graphic.html">Graphic Design</a></li>
                 <li><a class="link-effect" href="#">Visual Merchandising</a></li>
             </ul>
 
@@ -182,32 +182,50 @@
         
         <footer>
             <h3>Contact</h3>
+            <form id="my-form" action="https://formspree.io/f/mayaapeb" method="POST">
                 <div class="form-container">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Name" required>
-                        <input type="text" id="email" placeholder="Email" required>
-                        <input type="subject" id="subject" placeholder="Subject" required>
-                        <textarea name="message" id="message" placeholder="Message" cols="30" rows="10"></textarea>
-                        <button type="send">Send</button>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="_replyto" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="subject" id="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                    </div>
+
+                        <button type="submit">Send</button>
+                        <div id="status"></div>
                     </div>
                 </div>
            </form>
+           
 
             <!-- <div class="contacts">
                 <div class="contact-method">
                     <img src="img/Contact Icon Black_Email.svg" alt="email icon">
                     <p class="contact-title">Email</p>
-                    <p class="contact-detail">caseyccs1122@gmail.com</p>
+                    <p class="contact-detail"></p>
                 </div>
                 <div class="contact-method">
                     <img src="img/Contact Icon Black_Cell.svg" alt="cell phone icon">
                     <p class="contact-title">Cell Phone</p>
-                    <p class="contact-detail">62962925</p>
+                    <p class="contact-detail"></p>
                 </div>
                 <div class="contact-method">
                     <img src="img/Contact Icon Black_In.svg" alt="linkin icon">
                     <p class="contact-title">Linkin</p>
-                    <p class="contact-detail">Casey Chau</p>
+                    <p class="contact-detail"></p>
                 </div>
             </div> -->
             <p class="disclaimer">Built by Casey 2021</p>
@@ -215,10 +233,8 @@
             <div class="circle-contact diagonal-line"></div>
         </footer>
     </section>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script src="./Home.js"></script>
-  <script>
-    AOS.init();
-  </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./app.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>

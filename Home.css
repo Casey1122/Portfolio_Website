@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@500;700&display=swap");
 
 * {
   padding: 0px;
@@ -15,7 +16,7 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 /*--------------------------------- Custom Properties ---------------------------------*/
@@ -220,9 +221,9 @@ section .scroll-text {
   animation: MoveUpDown 3s linear infinite;
 }
 
-section .scroll-text a{
+section .scroll-text a {
   text-decoration: none;
-  color:var(--clr-minor);
+  color: var(--clr-minor);
 }
 
 /*--------------------------------- Desktop About ---------------------------------*/
@@ -634,7 +635,7 @@ textarea {
   padding: 10px;
   border: none;
   border-bottom: 1px solid white;
-  background-color:black;
+  background-color: black;
 }
 
 textarea {
@@ -649,8 +650,182 @@ button {
   padding: 10px 30px;
   font-family: var(--ff-primary);
   font-weight: 600;
-  margin-bottom: 50px;
-  cursor: pointer;;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+button:hover {
+  background-color: var(--clr-minor);
+}
+
+#status {
+  padding: 10px 30px;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+}
+
+#status.success {
+  background-color: greenyellow;
+  animation: status 4s ease forwards;
+}
+
+#status.error {
+  background-color: rgb(255, 95, 47);
+  color: white;
+  animation: status 4s ease forwards;
+}
+
+label {
+  margin: 10px;
+}
+
+/*--------------------------------- Desktop Graphic ---------------------------------*/
+
+.relative {
+  position: relative;
+}
+
+.graphic-container {
+  width: min(1200px, 70%);
+  justify-content: center;
+  margin: 0 auto 80px;
+}
+
+.graphic-container h1 {
+  color: var(--clr-accent);
+  font-size: 4rem;
+  margin: 40px 0;
+}
+
+.image-container {
+  /* display: grid;
+  grid: 400px / 1fr 1fr / auto-flow;
+  grid-auto-rows: auto;
+  grid-gap: 2em;
+  background:blueviolet; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  /* This is better for small screens, once min() is better supported */
+  /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+  gap: 1rem;
+}
+
+.img-holder {
+  /* background:#e74040; */
+  overflow: hidden;
+  position: relative;
+}
+
+.img-holder img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: transform 200ms ease-in;
+  position: relative;
+  display: block;
+}
+
+/* .content:before {
+  content: '';
+  background:rgba(20, 255, 239, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 111;
+  transform: translateY(-100%);
+  transition: all .4s ease-in;
+  height: 100%;
+  width: 100%;
+} */
+
+/* .img-holder:hover .content:before {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.img-holder img:hover {
+  transform: scale(1.2);
+}
+
+.img-holder img:hover:before {
+  visibility: visible;
+} */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: min(600px, 100%);
+  background: rgba(231, 64, 64, 0.5);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  /* z-index: 11; */
+}
+
+.overlay > * {
+  transform: translateY(40px);
+  transition: transform 0.2s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlay:hover > * {
+  transform: translateY(0);
+}
+
+.img_title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Noto Sans HK", sans-serif;
+  /* border: 1px solid white; */
+  color: rgba(231, 64, 64, 0.7);
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+footer .foot-note {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.graphic-circle-L {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  top: 600px;
+  left: 120px;
+  z-index: -1;
+  rotate: 45deg;
+  opacity: .5;
+}
+
+.graphic-circle-R {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  right: 120px;
+  z-index: -1;
+  rotate: 45deg;
+  opacity: .5;
 }
 
 /*--------------------------------- Animation ---------------------------------*/
@@ -665,9 +840,9 @@ button {
   }
 }
 
-
 @keyframes MoveUpDown {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -688,6 +863,21 @@ button {
   }
 }
 
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
 /*--------------------------------- Breakpoint ---------------------------------*/
 
 @media screen and (max-width: 1024px) {
@@ -695,9 +885,9 @@ button {
     height: 1200px;
   }
 
-  section .intro-container{
+  section .intro-container {
     flex-direction: column;
-    background-color: lawngreen;
+    /* background-color: lawngreen; */
     align-items: center;
     min-width: 100%;
   }
@@ -718,24 +908,24 @@ button {
   }
 
   section .work-container {
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
     min-width: 600px;
   }
 
   section .tool-title p {
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
     width: 600px;
   }
 
-  section .work .bar-down{
+  section .work .bar-down {
     width: 600px;
   }
 }
 
-@media screen and (max-width: 650px){
-  section .intro-container{
+@media screen and (max-width: 650px) {
+  section .intro-container {
     flex-direction: column;
-    background-color:deeppink;
+    /* background-color:deeppink; */
     align-items: center;
     min-width: 100%;
   }
@@ -751,7 +941,7 @@ button {
   } */
 
   section .work-container {
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
     min-width: 450px;
   }
 
@@ -769,12 +959,12 @@ button {
     min-width: 450px;
   }
 
-  section .tool-title h4{
+  section .tool-title h4 {
     font-size: 4rem;
     width: 450px;
   }
 
-  section .tool-title p{
+  section .tool-title p {
     width: 100%;
   }
 
@@ -784,11 +974,11 @@ button {
   }
 
   .circle-tool-left {
-    opacity: .2;
+    opacity: 0.2;
   }
 
   .circle-tool-right {
-    opacity: .2;
+    opacity: 0.2;
     width: 200px;
     height: 200px;
   }
@@ -797,7 +987,7 @@ button {
     width: 400px;
   }
 
- /*--------------------------------- Nav Bar ---------------------------------*/
+  /*--------------------------------- Nav Bar ---------------------------------*/
 
   .nav-links {
     position: absolute;
@@ -808,7 +998,7 @@ button {
     display: flex;
     flex-direction: column;
     align-content: center;
-    justify-content:center;
+    justify-content: center;
     font-size: 2rem;
     background-color: var(--clr-accent);
     z-index: 100;
@@ -816,13 +1006,13 @@ button {
     transition: transform 0.5s ease-in;
   }
 
-  .nav-links li{
+  .nav-links li {
     margin: 50px 0;
     opacity: 0;
     text-align: center;
   }
 
-  .nav-links li a{
+  .nav-links li a {
     color: white;
     text-align: center;
   }
@@ -833,16 +1023,16 @@ button {
     cursor: pointer;
   }
 
-  .toggle .line1{
-    transform: rotate(-45deg) translate(-5px,6px);
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
-  .toggle .line2{
-    Opacity: 0;
+
+  .toggle .line2 {
+    opacity: 0;
   }
-  
-  .toggle .line3{
-    transform: rotate(45deg) translate(-5px,-6px);
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
   }
 
   .nav-active {
@@ -855,14 +1045,14 @@ button {
     height: 1000px;
     overflow-x: hidden;
   }
-  
-  section .intro-container{
-    background-color:slateblue;
+
+  section .intro-container {
+    /* background-color:slateblue; */
     min-width: 350px;
     flex-direction: column;
   }
 
-  section .intro .my-pic{
+  section .intro .my-pic {
     width: 250px;
   }
 
@@ -870,27 +1060,27 @@ button {
     margin: 0 auto;
   }
 
-  section .intro .frame{
+  section .intro .frame {
     width: 250px;
     height: 350px;
   }
 
   section .intro-text {
     width: 300px;
-    margin: 0
+    margin: 0;
   }
 
-  section .intro-text h3{
+  section .intro-text h3 {
     font-size: 1.5rem;
   }
 
-  section .intro-text p{
+  section .intro-text p {
     font-size: 0.8rem;
     line-height: 1rem;
   }
 
-  section .work-container{
-    background-color: violet;
+  section .work-container {
+    /* background-color: violet; */
     min-width: 350px;
   }
 
@@ -899,14 +1089,14 @@ button {
     background-color: tomato;
   }
 
-  section .work-container h4{
+  section .work-container h4 {
     font-size: 4rem;
     left: 10px;
     top: 10px;
-    background-color: violet;
+    /* background-color: violet; */
   }
 
-  section .work-type p{
+  section .work-type p {
     font-size: 0.8rem;
     line-height: 1rem;
   }
@@ -941,11 +1131,11 @@ button {
   }
 
   .circle-tool-left {
-    opacity: .2;
+    opacity: 0.2;
   }
 
   .circle-tool-right {
-    opacity: .2;
+    opacity: 0.2;
     width: 200px;
     height: 200px;
   }
@@ -960,7 +1150,6 @@ button {
     /* background-color: burlywood; */
     width: 90%;
   }
-  
 
   input {
     width: 90%;
