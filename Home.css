@@ -711,7 +711,7 @@ label {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   /* This is better for small screens, once min() is better supported */
   /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .img-holder {
@@ -727,6 +727,7 @@ label {
   transition: transform 200ms ease-in;
   position: relative;
   display: block;
+  border-radius: 10px;
 }
 
 /* .content:before {
@@ -772,6 +773,7 @@ label {
   opacity: 0;
   transition: opacity 0.2s ease;
   /* z-index: 11; */
+  border-radius: 10px;
 }
 
 .overlay > * {
@@ -793,10 +795,7 @@ label {
   text-align: center;
   font-family: "Noto Sans HK", sans-serif;
   /* border: 1px solid white; */
-  color: rgba(231, 64, 64, 0.7);
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  color: white;
 }
 
 footer .foot-note {
@@ -826,6 +825,129 @@ footer .foot-note {
   z-index: -1;
   rotate: 45deg;
   opacity: .5;
+}
+
+/*--------------------------------- UXUI home ---------------------------------*/
+
+/* .ui-home {
+  width: max(450px, 100%);
+  margin: 80px auto;
+} */
+
+.ui-home img{
+  width: max(100%, 450px);
+  border-radius: 10px;
+  margin: 2% auto;
+}
+
+/*--------------------------------- UXUI home ---------------------------------*/
+
+.ui-steam .banner {
+  width: 100%;
+}
+
+.ui-steam h1 {
+  text-align: center;
+  margin: 20px 0;
+  color: #7B61FF;
+  font-size: 2rem;
+}
+
+.ui-steam p {
+  margin: 20px 0 0;
+  line-height: 2rem;
+  padding: 0 20px 20px;
+}
+
+.ui-steam h2 {
+  text-align: center;
+  margin: 150px 0 10px;
+  color: #7B61FF;
+}
+
+.ui-steam .img-style {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 80px;
+}
+
+.ui-steam h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.ui-steam .process-container {
+  width: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(25%,180px));
+  justify-content: center;
+}
+
+.ui-steam .process-container p{
+  padding: 0;
+  text-align: center;
+}
+
+.ui-steam video {
+  margin-top: 80px;
+  border-radius: 10px;
+}
+
+.blue-text {
+  color: #7B61FF;
+  margin-top: 0;
+}
+
+
+.process-flex {
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.process-flex p{
+  margin: 0 30px 40px;
+}
+
+.process-flex .process-icon {
+  width: 50px;
+  margin-top: 50px;
+}
+
+#last-p {
+  margin-bottom: 150px;
+}
+
+/*--------------------------------- UXUI headphone---------------------------------*/
+.fixed-width{
+  width: max(400px, 50%);
+  margin: 40px auto;
+}
+
+.ux-nav {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.ux-nav li {
+  list-style: none;
+  text-align: center;
+}
+
+.ux-nav a {
+  text-decoration: none;
+}
+
+.ui-container img {
+  width: 100%;
 }
 
 /*--------------------------------- Animation ---------------------------------*/
