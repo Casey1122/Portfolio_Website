@@ -922,6 +922,43 @@ footer .foot-note {
 #last-p {
   margin-bottom: 150px;
 }
+/*--------------------------------- UXUI Wallet ---------------------------------*/
+
+.grid {
+  position: relative;
+}
+
+.green-text {
+  color:rgb(59, 130, 125);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.position-p {
+  position: absolute;
+}
+
+.p-1 {
+  top: 35%;
+  left: 40px;
+}
+
+.p-2 {
+  top: 45%;
+  left: 40px;
+}
+
+.p-3 {
+  top: 55%;
+  left: 40px;
+}
+
+.center-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /*--------------------------------- UXUI headphone---------------------------------*/
 .fixed-width{
